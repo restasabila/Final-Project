@@ -1,0 +1,29 @@
+Proses order makanan/minuman via online
+
+START
+
+READ "Handphone"
+CALL "Membuka Aplikasi"
+CALL "Mencari makanan/minuman"
+
+WHILE "Makanan Ditemukan" = False
+STORE "Menemukan makanan/minuman" WITH Makanan/minuman()
+CALL "Daftar Tambahkan"
+CALL "Alamat"
+
+STORE "methodcash" WITH cash() 
+IF cash= Ya
+STORE "cash" WITH Langsung Bayar
+ELSE "cash" = Tidak
+STORE "cash" WITH method-non-cash
+
+STORE "Menunggu pengiriman" WITH Menunggu() 
+IF Pesanan= Ya
+STORE "Sudah dikirim" WITH Dikirim
+ELSE "Pesanan" = Tidak
+STORE "Tetap menunggu" WITH Menunggu
+
+CALL "Pesanan diantar"
+CALL "Pesanan diterima"
+
+END
